@@ -128,4 +128,4 @@ def get_server():
         "api": settings.API_BASE_URL,
         "version": settings.VERSION,
         "datetime": datetime.now().isoformat(),
-        "source": "https://github.com/greenstatic/bigbluebutton-monitoring"}
+        "source": "https://github.com/wallace6176/bigbluebutton-monitoring"}
