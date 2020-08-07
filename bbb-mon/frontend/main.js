@@ -17,6 +17,8 @@ function api_meetings() {
         data.forEach(function(element, i) {
             let mods = element.moderators.join(" | ");
 
+            let views = element.viewers.join("</p><p>");
+
             let creation = new Date(parseFloat(element.creation));
 
             let originContext = "";
@@ -29,6 +31,7 @@ function api_meetings() {
 <td>${element.name}</td>
 <td>${element.noUsers}</td>
 <td>${mods}</td>
+<td>${views}</td>
 <td>${element.metadata['origin-server']}</td>
 <td>${originContext}</td>
 <td>${creation.toLocaleString()}</td>

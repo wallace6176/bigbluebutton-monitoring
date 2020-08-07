@@ -14,4 +14,4 @@ VERSION="${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_BUGFIX}"
 
 # Build docker image
 cd ${DOCKERFILE_PATH}
-docker build -t greenstatic/bigbluebutton-monitoring:version-${VERSION} .
+docker build -t wallacegaturu/bigbluebutton-monitoring:version-${VERSION} .

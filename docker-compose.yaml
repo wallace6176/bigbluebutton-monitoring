@@ -2,7 +2,7 @@ version: '3.2'
 services:
   bbb-exporter:
     container_name: "bbb-monitoring"
-    image: greenstatic/bigbluebutton-monitoring:${BBB_MONITORING_VERSION:-latest}
+    image: wallacegaturu/bigbluebutton-monitoring:${BBB_MONITORING_VERSION:-latest}
     ports:
     - "127.0.0.1:4000:5000"
     environment:
