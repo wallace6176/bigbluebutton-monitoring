@@ -48,6 +48,19 @@ def get_meetings():
                 if attendee['role'].lower() == 'moderator':
                     moderators.append(attendee['fullName'])
 
+        viewers = []
+
+        if type(meeting['attendees']) == OrderedDict:
+            if type(meeting['attendees']['attendee']) == list:
+                for attendee in meeting['attendees']['attendee']:
+                    if attendee['role'].lower() == "viewer":
+                        viewers.append(attendee['fullName'])
+
+            else:
+                attendee = meeting['attendees']['attendee']
+                if attendee['role'].lower() == 'viewer':
+                    viewers.append(attendee['fullName'])
+
         origin_server = None
         try:
             origin_server = meeting['metadata']['bbb-origin-server-name']
@@ -62,6 +75,7 @@ def get_meetings():
             "creation": meeting['createTime'],
             "noUsers": meeting['participantCount'],
             "moderators": moderators,
+            "viewers": viewers,
             "metadata": {
                 "origin-server": origin_server,
             }
