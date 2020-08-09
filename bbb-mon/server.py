@@ -2,6 +2,7 @@ from flask import Flask, jsonify, send_from_directory
 
 import settings
 import views
+import database
 
 app = Flask(__name__, static_url_path='')
 

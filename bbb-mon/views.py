@@ -7,6 +7,7 @@ import xmltodict
 
 import api_lib
 import settings
+import database
 
 
 def get_meetings():
@@ -88,6 +89,9 @@ def get_meetings():
             pass
 
         response.append(m)
+
+        if response is not None:
+            database.save_meetings(response)
 
     return response
 

@@ -55,5 +55,5 @@ function api_server() {
 $(function() {
     api_server();
     api_meetings();
-    setInterval(api_meetings, 15 * 1000);
+    setInterval(api_meetings, 600 * 1000);
 });
